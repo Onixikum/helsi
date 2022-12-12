@@ -1,0 +1,55 @@
+// Custom style
+
+body {
+  background-color: #F5F5F5;
+}
+
+/* Navigation menu */
+
+a.navbar-brand {
+  color: #ffc107;
+  font-weight: 900;
+  text-decoration:none;
+}
+
+a.nav-link {
+  color: #ffc107;
+  font-weight: bold;
+  text-decoration:none;
+}
+
+a.btn-nav {
+  color: #ffc107;
+  font-weight: 600;
+  text-decoration:none;
+}
+
+.dropdown-menu.show {
+  background-color: #696969;
+  box-shadow: 5px 5px 3px -1px rgba(0,0,0,0.45);
+}
+
+a.dropdown-item {
+  color: #ffc107;
+  font-weight: bold;
+  text-decoration:none;
+}
+
+/* Corpus box */
+
+.corpus-box {
+  min-height: 45em;
+  padding-bottom: 1em;
+  background-color: white;
+}
+
+/* Footer */
+
+footer {
+  padding: 2em 0 2em 0;
+  color: #ffc107;
+  a.text {
+    color: #ffc107;
+    text-decoration:none;
+  }
+}
