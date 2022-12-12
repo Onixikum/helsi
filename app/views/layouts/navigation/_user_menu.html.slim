@@ -1,0 +1,13 @@
+li.nav-item
+  = link_to 'Home', root_path, class: 'nav-link'
+li.nav-item.dropdown
+  a.nav-link.dropdown-toggle[href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"]
+    |  Account
+  ul.dropdown-menu
+    li
+      = link_to 'Profile', '#', class: 'dropdown-item'
+    li
+      = link_to 'Setting', '#', class: 'dropdown-item'
+    li
+      hr.dropdown-divider
+    = link_to 'Sign Out', destroy_user_session_path, class: 'dropdown-item', data: { turbo_method: :delete }
