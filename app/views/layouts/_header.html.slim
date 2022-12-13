@@ -9,4 +9,4 @@ nav.navbar.navbar-dark.navbar-expand-lg.bg-dark
           = render 'layouts/navigation/user_menu'
         - else
           li
-            = link_to 'Login', '#', class: 'btn btn-outline-warning btn-sm btn-nav'
+            = link_to 'Login', new_user_session_path, class: 'btn btn-outline-warning btn-sm btn-nav'

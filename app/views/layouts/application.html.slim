@@ -13,3 +13,4 @@ html
     .container.corpus-box
       = yield
     = render 'layouts/footer'
+    = debug(params) if Rails.env.development?

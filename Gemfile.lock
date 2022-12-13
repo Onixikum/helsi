@@ -264,6 +264,9 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    simple_form (5.1.0)
+      actionpack (>= 5.2)
+      activemodel (>= 5.2)
     slim (4.1.0)
       temple (>= 0.7.6, < 0.9)
       tilt (>= 2.0.6, < 2.1)
@@ -321,6 +324,7 @@ DEPENDENCIES
   rails (= 7.0.4)
   rspec-rails (= 6.0.0)
   rubocop (= 1.39.0)
+  simple_form (= 5.1.0)
   slim-rails (= 3.5.1)
   sprockets-rails (= 3.4.2)
   stimulus-rails (= 1.1.0)
