@@ -1,0 +1,16 @@
+- flash.each do |type, msg|
+  - if notice
+    .alert.alert-primary.m-1[role="alert"]
+      = notice
+  - if alert
+    .alert.alert-warning.m-1[role="alert"]
+      = alert
+  - if info
+    .alert.alert-info.m-1[role="alert"]
+      = info
+  - if error
+    .alert.alert-danger.m-1[role="alert"]
+      = error
+  - if success
+    .alert.alert-success.m-1[role="alert"]
+      = success
