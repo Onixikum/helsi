@@ -7,6 +7,8 @@ nav.navbar.navbar-dark.navbar-expand-lg.bg-dark
       ul.navbar-nav.ms-auto.mb-2.mb-lg-0
         - if user_signed_in?
           = render 'layouts/navigation/user_menu'
+        - elsif doctor_signed_in?
+          = render 'layouts/navigation/doctor_menu'
         - else
           li
             = link_to 'Login', new_user_session_path, class: 'btn btn-outline-warning btn-sm btn-nav'
