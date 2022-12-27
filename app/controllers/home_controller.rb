@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 class HomeController < ApplicationController
-  before_action :authenticate_user!
-
-  def index
+  def welcome
+    redirect_to user_root_path if current_user
   end
 end
