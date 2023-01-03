@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   get 'users/home/show',   as: 'user_root'
   get 'doctors/home/show', as: 'doctor_root'
 
+  namespace :users do
+    resources :categories, only: %i[index show]
+  end
+
   devise_for :users, controllers: {
     registrations: 'persons/registrations'
   }
