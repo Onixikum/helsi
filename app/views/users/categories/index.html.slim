@@ -1,0 +1,12 @@
+h1.text-center.pt-2
+  | List of categories
+- if @categories.any?
+  ol.list-group.list-group-numbered.pt-2
+    - @categories.map do |category|
+      li.list-group-item.d-flex.justify-content-between.align-items-start
+        .ms-2.me-auto
+          .fw-bold
+            = link_to "#{category.name}", users_category_path(id: category.id)
+        span.badge.bg-warning.text-dark.rounded-pill= "Count of doctors in this specialization #{category.doctors.count}"
+  .digg_pagination.m-3
+    = will_paginate @categories
