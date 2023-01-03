@@ -7,6 +7,8 @@ class Doctor < ApplicationRecord
   include ExcludeEmail
 
   has_one :profile, as: :person, dependent: :destroy
+  has_many :specializations, dependent: :destroy
+  has_many :categories, through: :specializations
 
   accepts_nested_attributes_for :profile
 

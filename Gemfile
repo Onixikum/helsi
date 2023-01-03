@@ -10,6 +10,7 @@ gem 'bootsnap', require: false
 gem 'bootstrap', '5.2.3'
 gem 'cancancan', '3.4.0'
 gem 'devise', '4.8.1'
+gem 'faker', '3.1.0'
 gem 'importmap-rails', '1.1.5'
 gem 'jbuilder', '2.11.5'
 gem 'pg', '1.4.4'
