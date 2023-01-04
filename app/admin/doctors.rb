@@ -7,14 +7,14 @@ ActiveAdmin.register Doctor do
   index do
     selectable_column
     id_column
-    column(:full_name) { |doctor| doctor.profile }
+    column :full_name
     column :phone
     actions
   end
 
   show do
     attributes_table do
-      row(:full_name) { |doctor| doctor.profile }
+      row :full_name
       row :phone
       row :created_at
       row :update_at

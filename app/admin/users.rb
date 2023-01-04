@@ -7,14 +7,14 @@ ActiveAdmin.register User do
   index do
     selectable_column
     id_column
-    column(:full_name) { |user| user.profile }
+    column :full_name
     column :phone
     actions
   end
 
   show do
     attributes_table do
-      row(:full_name) { |user| user.profile }
+      row :full_name
       row :phone
       row :created_at
       row :update_at
