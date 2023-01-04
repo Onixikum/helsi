@@ -15,4 +15,8 @@ class Doctor < ApplicationRecord
   validates :phone, presence: true, uniqueness: true
 
   default_scope -> { order(created_at: :desc) }
+
+  def full_name
+    [profile.first_name, profile.last_name].join(' ')
+  end
 end
