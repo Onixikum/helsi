@@ -36,4 +36,17 @@ ActiveAdmin.register User do
     end
     f.actions
   end
+
+  controller do
+    private
+
+    def user_params
+      params.require(:user).permit(
+        :phone,
+        :password,
+        :password_confirmation,
+        profile_attributes: %i[first_name last_name]
+      )
+    end
+  end
 end
