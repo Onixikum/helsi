@@ -9,6 +9,8 @@ class Doctor < ApplicationRecord
   has_one :profile, as: :person, dependent: :destroy
   has_many :specializations, dependent: :destroy
   has_many :categories, through: :specializations
+  has_many :appointments
+  has_many :user, through: :appointments
 
   accepts_nested_attributes_for :profile
 

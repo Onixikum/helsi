@@ -73,10 +73,6 @@ doctor_ids.map do |id|
   category_sample_id = Category.find(Category.pluck(:id).sample).id
 
   Specialization.create!(doctor_id: id, category_id: category_sample_id)
-
-  category_sample_id = Category.find(Category.pluck(:id).sample).id
-
-  Specialization.create!(doctor_id: id, category_id: category_sample_id)
 end
 
 p 'The categories are intended for doctors'
