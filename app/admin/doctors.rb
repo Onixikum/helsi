@@ -36,4 +36,17 @@ ActiveAdmin.register Doctor do
     end
     f.actions
   end
+
+  controller do
+    private
+
+    def doctor_params
+      params.require(:doctor).permit(
+        :phone,
+        :password,
+        :password_confirmation,
+        profile_attributes: %i[first_name last_name]
+      )
+    end
+  end
 end

@@ -11,4 +11,12 @@ ActiveAdmin.register Category do
     column('Count of doctors') { |categoty| categoty.doctors.count }
     actions
   end
+
+  controller do
+    private
+
+    def category_params
+      params.require(:category).permit(:name)
+    end
+  end
 end
