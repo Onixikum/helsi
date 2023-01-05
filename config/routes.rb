@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   namespace :users do
     resources :categories, only: %i[index show]
+    resources :appointments, only: %i[index create]
+    resources :doctors, only: :show
   end
 
   devise_for :users, controllers: {

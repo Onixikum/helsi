@@ -1,0 +1,28 @@
+h4.text-center.m-2
+  | Information about the Doctor
+.row
+  .col-sm-4
+    = render partial: "personal_data", object: @doctor
+  .col-sm-8
+    = render partial: "form_appointment", object: @appointment
+.row
+  .col-sm-4
+    - if @categories.any?
+      .my-2.p-2.bg-light.border.border-warning.rounded
+        table.table.table-striped.table-hover
+          thead
+            tr
+              th[scope="col"]
+                | Specializations of the doctor
+        = render partial: "category", collection: @categories
+  .col-sm-8
+    - if @appointments.any?
+      table.table.table-striped.table-hover
+        thead
+          tr
+            th[scope="col"]
+              | Your doctor's appointments
+      .d-grid.gap-3.my-2
+        = render partial: "appointment", collection: @appointments
+      .digg_pagination.m-3
+        = will_paginate @appointments
