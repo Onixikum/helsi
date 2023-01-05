@@ -8,7 +8,7 @@ class Appointment < ApplicationRecord
 
   validates :doctor_id, :user_id, :appointment_date, presence: true
   validates :symptoms, presence: true, length: { in: 5..500 }
-  validates :symptoms, length: { maximum: 500 }
+  validates :recommendation, length: { maximum: 500 }
 
   default_scope -> { order(created_at: :desc) }
   scope :opened, -> { where(aasm_state: :opening).order(created_at: :desc) }
