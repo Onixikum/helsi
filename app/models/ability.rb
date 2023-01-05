@@ -7,6 +7,7 @@ class Ability
     return unless user.present?
 
     can :read, :all
+    can :manage, Appointment
 
     return unless user.is_a?(AdminUser)
 

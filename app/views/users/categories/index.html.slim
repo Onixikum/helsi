@@ -2,7 +2,7 @@ h1.text-center.pt-2
   | List of categories
 - if @categories.any?
   ol.list-group.list-group-numbered.pt-2
-    - @categories.map do |category|
+    - @categories.each do |category|
       li.list-group-item.d-flex.justify-content-between.align-items-start
         .ms-2.me-auto
           .fw-bold

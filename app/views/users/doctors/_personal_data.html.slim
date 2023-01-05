@@ -1,0 +1,17 @@
+.my-2.p-2.bg-light.border.border-warning.rounded
+  table.table.table-striped.table-hover
+    thead
+      tr
+        th[scope="col"]
+          | Personal data
+    tbody
+      tr
+        td
+          | Doctor Name:
+        td
+          = @doctor.full_name
+      tr
+        td
+          | Phone number:
+        td
+          = @doctor.phone

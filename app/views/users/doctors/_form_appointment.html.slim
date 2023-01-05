@@ -1,0 +1,12 @@
+.my-2.p-2.bg-light.border.border-warning.rounded
+  p.text-center.fw-semibold
+    | Make an appointment with a doctor
+  = simple_form_for(@appointment, url: users_appointments_path, method: :post) do |f|
+    = f.error_notification
+    .mb-3
+      = f.hidden_field :doctor_id, value: @doctor.id
+    .mb-3.text-center
+      = f.datetime_select :appointment_date, class: "form-select"
+    .input-group.mb-3
+      = f.text_field :symptoms, class: "form-control", placeholder: "Describe your symptoms", "aria-label" => "Describe your symptoms", "aria-describedby" => "button-addon2"
+      = f.submit class: "btn btn-warning", id: "button-addon2"
