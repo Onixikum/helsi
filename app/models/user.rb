@@ -1,10 +1,13 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  before_save :normalize_phone
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
   include ExcludeEmail
+  include PhoneNumber
 
   has_one :profile, as: :person, dependent: :destroy
   has_many :appointments
@@ -12,7 +15,8 @@ class User < ApplicationRecord
 
   accepts_nested_attributes_for :profile
 
-  validates :phone, presence: true, uniqueness: true
+  validates :phone, uniqueness: true
+  validates :phone, phone: true
 
   default_scope -> { order(created_at: :desc) }
 
