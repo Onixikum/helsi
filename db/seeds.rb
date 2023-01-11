@@ -76,3 +76,27 @@ doctor_ids.map do |id|
 end
 
 p 'The categories are intended for doctors'
+
+user_ids = User.pluck(:id)
+
+user_ids.map do |id|
+  6.times do
+    Appointment.create!(
+      doctor_id: doctor_ids.sample,
+      user_id: id,
+      appointment_date: DateTime.now,
+      symptoms: Faker::Lorem.paragraph_by_chars
+    )
+
+    Appointment.create!(
+      doctor_id: doctor_ids.sample,
+      user_id: id,
+      appointment_date: DateTime.now,
+      symptoms: Faker::Lorem.paragraph_by_chars,
+      recommendation: Faker::Lorem.paragraph_by_chars,
+      aasm_state: :closing
+    )
+  end
+end
+
+p "Appointments #{Appointment.count} created"
