@@ -1,0 +1,8 @@
+h1.text-center.pt-2
+  | Active Appointments
+.col-sm-12
+  - if @appointments.any?
+    .d-grid.gap-3.my-2
+      = render partial: "appointment", collection: @appointments, as: :item
+    .digg_pagination.m-3
+      = will_paginate @appointments
