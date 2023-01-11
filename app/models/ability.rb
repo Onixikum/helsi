@@ -15,7 +15,8 @@ class Ability
     can :manage, ActiveAdmin::Comment
     can :manage, Category
     can :manage, Specialization
-    can %i[read update destroy], Doctor
+    can :manage, Doctor
+    can :read, Appointment
     can %i[read update destroy], User
   end
 end
