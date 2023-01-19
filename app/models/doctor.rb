@@ -17,7 +17,8 @@ class Doctor < ApplicationRecord
 
   accepts_nested_attributes_for :profile
 
-  validates :phone, uniqueness: true
+  validates :phone, presence: true, uniqueness: true
+  validates :encrypted_password, presence: true
   validates :phone, phone: true
 
   default_scope -> { order(created_at: :desc) }
