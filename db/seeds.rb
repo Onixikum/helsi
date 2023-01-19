@@ -2,11 +2,11 @@
 
 require 'faker'
 
-AdminUser.create!(phone: '0631234567', password: 'password', password_confirmation: 'password') if Rails.env.development?
+AdminUser.create!(phone: '+380631234567', password: 'password', password_confirmation: 'password') if Rails.env.development?
 
 20.times do
   user = User.create!(
-    phone: Faker::PhoneNumber.cell_phone_in_e164,
+    phone: "+38063#{Faker::Number.number(digits: 7)}",
     password: 'password',
     password_confirmation: 'password'
   )
@@ -23,7 +23,7 @@ p "Created #{User.count} users"
 
 20.times do
   doctor = Doctor.create!(
-    phone: Faker::PhoneNumber.cell_phone_in_e164,
+    phone: "+38063#{Faker::Number.number(digits: 7)}",
     password: 'password',
     password_confirmation: 'password'
   )
@@ -76,3 +76,27 @@ doctor_ids.map do |id|
 end
 
 p 'The categories are intended for doctors'
+
+user_ids = User.pluck(:id)
+
+user_ids.map do |id|
+  6.times do
+    Appointment.create!(
+      doctor_id: doctor_ids.sample,
+      user_id: id,
+      appointment_date: DateTime.now,
+      symptoms: Faker::Lorem.paragraph_by_chars
+    )
+
+    Appointment.create!(
+      doctor_id: doctor_ids.sample,
+      user_id: id,
+      appointment_date: DateTime.now,
+      symptoms: Faker::Lorem.paragraph_by_chars,
+      recommendation: Faker::Lorem.paragraph_by_chars,
+      aasm_state: :closing
+    )
+  end
+end
+
+p "Appointments #{Appointment.count} created"
