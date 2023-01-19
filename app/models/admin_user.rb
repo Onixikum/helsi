@@ -6,4 +6,7 @@ class AdminUser < ApplicationRecord
   devise :database_authenticatable,
          :recoverable, :rememberable, :validatable
   include ExcludeEmail
+
+  validates :phone, presence: true, uniqueness: true
+  validates :encrypted_password, presence: true
 end
