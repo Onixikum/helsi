@@ -15,3 +15,8 @@
           | Phone number:
         td
           = @doctor.formatted_phone
+      tr
+        td
+          | Free appointments:
+        td
+          = free_appointments(@doctor)
