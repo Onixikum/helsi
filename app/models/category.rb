@@ -13,6 +13,6 @@ class Category < ApplicationRecord
   private
 
   def normalize_name
-    self.name = name.downcase.titleize
+    self.name = name&.downcase&.titleize
   end
 end
