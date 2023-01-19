@@ -29,7 +29,10 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'will_paginate', '3.3.1'
 
 group :development, :test do
+  gem 'capybara', '3.38.0'
+  gem 'database_cleaner', '2.0.1'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'factory_girl_rails', '4.9.0'
   gem 'rspec-rails', '6.0.0'
 end
 
