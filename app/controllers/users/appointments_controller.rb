@@ -3,7 +3,6 @@
 module Users
   class AppointmentsController < BaseController
     def index
-      @open_appointments = current_user.appointments.opened.paginate(page: params[:page], per_page: 5)
       @close_appointments = current_user.appointments.closed.paginate(page: params[:page], per_page: 5)
     end
 
