@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'faker'
-
 FactoryGirl.define do
   factory :doctor do
     phone { "+38063#{Faker::Number.number(digits: 7)}" }

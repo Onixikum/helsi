@@ -8,7 +8,7 @@ class Appointment < ApplicationRecord
 
   validates :doctor_id, :user_id, :appointment_date, presence: true
   validates :symptoms, presence: true, length: { in: 5..500 }
-  validates :recommendation, length: { in: 5..500 }, on: :update
+  validates :recommendation, presence: true, length: { in: 5..500 }, on: :update
   validates_with AppointmentValidator, on: :create
 
   default_scope -> { order(created_at: :desc) }
