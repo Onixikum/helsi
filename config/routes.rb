@@ -12,12 +12,12 @@ Rails.application.routes.draw do
   end
 
   namespace :doctors do
-    resources :appointments, only: %i[index update] do
+    resources :appointments, only: %i[index update]
+    resources :users, only: :show do
       collection do
         get 'history'
       end
     end
-    resources :users, only: :show
   end
 
   devise_for :users, controllers: {

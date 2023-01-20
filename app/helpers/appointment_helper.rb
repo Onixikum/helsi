@@ -8,4 +8,8 @@ module AppointmentHelper
   def open_appointments(user)
     user.appointments.where(aasm_state: :opening).count
   end
+
+  def close_appointments(user)
+    user.appointments.where(aasm_state: :closing).count
+  end
 end

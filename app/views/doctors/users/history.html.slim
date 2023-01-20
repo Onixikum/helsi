@@ -2,13 +2,13 @@
   .col-sm-4
     = render partial: "personal_data", object: @user
   .col-sm-8
-    - if @open_appointments.any?
+    - if @close_appointments.any?
       table.table.table-striped.table-hover
         thead
           tr
             th
-              | Open appointments
+              | History appointments
       .d-grid.gap-3.my-2
-        = render partial: "appointment", collection: @open_appointments, as: :item
+        = render partial: "appointment", collection: @close_appointments, as: :item
       .digg_pagination.m-3
-        = will_paginate @open_appointments
+        = will_paginate @close_appointments
