@@ -3,11 +3,8 @@
 module Doctors
   class AppointmentsController < BaseController
     def index
-      @appointments = current_doctor.appointments.opened.paginate(page: params[:page], per_page: 5)
-    end
-
-    def history
       @appointments = current_doctor.appointments.closed.paginate(page: params[:page], per_page: 5)
+      @categories = current_doctor.categories
     end
 
     def update
@@ -18,7 +15,7 @@ module Doctors
         flash[:error] = 'Something went wrong! Choose an appointment and provide recommendations.'
       end
 
-      redirect_to doctors_appointments_path
+      redirect_to doctor_root_path
     end
 
     private

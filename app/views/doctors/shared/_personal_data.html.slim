@@ -1,0 +1,27 @@
+.my-2.p-2.bg-light.border.border-warning.rounded
+  table.table.table-striped.table-hover
+    thead
+      tr
+        th[scope="col"]
+          | Personal data
+    tbody
+      tr
+        td
+          | Doctor Name:
+        td
+          = current_doctor.full_name
+      tr
+        td
+          | Phone number:
+        td
+          = current_doctor.formatted_phone
+      tr
+        td
+          | Open appointments:
+        td
+          = link_to open_appointments(current_doctor), root_path(id: current_doctor.id)
+      tr
+        td
+          | History appointments:
+        td
+          = link_to close_appointments(current_doctor), doctors_appointments_path(id: current_doctor.id)
