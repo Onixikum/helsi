@@ -1,11 +1,14 @@
-.col-sm-12
-  - if @close_appointments.any?
-    table.table.table-striped.table-hover
-      thead
-        tr
-          th
-            |  History appointments
-    .d-grid.gap-3.my-2
-      = render partial: "appointment", collection: @close_appointments, as: :item
-    .digg_pagination.m-3
-      = will_paginate @close_appointments
+.row
+  .col-sm-4
+    = render partial: "users/shared/personal_data", object: current_user
+  .col-sm-8
+    - if @close_appointments.any?
+      table.table.table-striped.table-hover
+        thead
+          tr
+            th
+              |  History appointments
+      .d-grid.gap-3.my-2
+        = render partial: "users/shared/appointment", collection: @close_appointments, as: :item
+      .digg_pagination.m-3
+        = will_paginate @close_appointments

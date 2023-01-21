@@ -1,6 +1,6 @@
 .row
   .col-sm-4
-    = render partial: "personal_data", object: current_user
+    = render partial: "users/shared/personal_data", object: current_user
   .col-sm-8
     - if @open_appointments.any?
     table.table.table-striped.table-hover
@@ -9,6 +9,6 @@
           th
             |  Open appointments
     .d-grid.gap-3.my-2
-      = render partial: "appointment", collection: @open_appointments, as: :item
+      = render partial: "users/shared/appointment", collection: @open_appointments, as: :item
     .digg_pagination.m-3
       = will_paginate @open_appointments
