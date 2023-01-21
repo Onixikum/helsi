@@ -19,9 +19,9 @@
         td
           | Open appointments:
         td
-          = link_to open_appointments(current_doctor), root_path(id: current_doctor.id)
+          = link_to number_of_open_appointments(current_doctor), root_path(id: current_doctor.id)
       tr
         td
           | History appointments:
         td
-          = link_to close_appointments(current_doctor), doctors_appointments_path(id: current_doctor.id)
+          = link_to number_of_close_appointments(current_doctor), doctors_appointments_path(id: current_doctor.id)
