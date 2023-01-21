@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   namespace :doctors do
     resources :appointments, only: %i[index update]
-    resources :users, only: :show do
+    resources :users, only: %i[show index] do
       collection do
         get 'history'
       end

@@ -5,11 +5,11 @@ module AppointmentHelper
     10 - doctor.appointments.where(aasm_state: :opening).count
   end
 
-  def open_appointments(user)
+  def number_of_open_appointments(user)
     user.appointments.where(aasm_state: :opening).count
   end
 
-  def close_appointments(user)
+  def number_of_close_appointments(user)
     user.appointments.where(aasm_state: :closing).count
   end
 end
