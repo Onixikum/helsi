@@ -19,4 +19,9 @@
         td
           | Open appointments:
         td
-          = open_appointments(current_user)
+          = link_to number_of_open_appointments(current_user), root_path
+      tr
+        td
+          | History appointments:
+        td
+          = link_to number_of_close_appointments(current_user), users_appointments_path
