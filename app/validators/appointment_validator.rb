@@ -6,8 +6,8 @@ class AppointmentValidator < ActiveModel::Validator
   end
 
   def doctor_is_free?(appointment)
-    return false if appointment.doctor.nil?
+    return false unless appointment.doctor.present?
 
-    appointment.doctor.appointments.where(aasm_state: :opening).count < 10
+    appointment.doctor.appointments.opened.count < 10
   end
 end
