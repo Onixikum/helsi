@@ -3,7 +3,7 @@
 module Doctors
   class UsersController < BaseController
     def index
-      @patients = current_doctor.appointments.opened.map(&:user).paginate(page: params[:page], per_page: 5)
+      @patients = current_doctor.appointments.opened.map(&:user).uniq.paginate(page: params[:page], per_page: 5)
     end
 
     def show
