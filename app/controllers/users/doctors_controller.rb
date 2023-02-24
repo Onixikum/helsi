@@ -2,6 +2,8 @@
 
 module Users
   class DoctorsController < BaseController
+    authorize_resource
+
     def show
       @doctor = Doctor.find_by(id: params[:doctor_id])
       @categories = @doctor.categories

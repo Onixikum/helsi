@@ -2,6 +2,8 @@
 
 module Users
   class AppointmentsController < BaseController
+    authorize_resource
+
     def index
       @close_appointments = current_user.appointments.closed.paginate(page: params[:page], per_page: 5)
     end
