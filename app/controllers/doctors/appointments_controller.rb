@@ -2,6 +2,8 @@
 
 module Doctors
   class AppointmentsController < BaseController
+    authorize_resource
+
     def index
       @appointments = current_doctor.appointments.closed.paginate(page: params[:page], per_page: 5)
       @categories = current_doctor.categories
