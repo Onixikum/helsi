@@ -33,6 +33,7 @@ group :development, :test do
   gem 'database_cleaner', '2.0.1'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_girl_rails', '4.9.0'
+  gem 'rails-controller-testing', '1.0.5'
   gem 'rspec-rails', '6.0.0'
   gem 'shoulda-matchers', '5.3.0'
 end
