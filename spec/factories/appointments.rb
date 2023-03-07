@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :appointment do
     doctor
     user
@@ -9,7 +9,7 @@ FactoryGirl.define do
 
     trait :closing do
       recommendation { Faker::Lorem.paragraph_by_chars }
-      aasm_state :closing
+      aasm_state { :closing }
     end
   end
 end
