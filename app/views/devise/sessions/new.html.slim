@@ -1,0 +1,14 @@
+.form
+  .form-box
+    h2
+      | Log in
+    = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      = f.error_notification
+      .form-inputs
+        = f.input :phone, required: false, autofocus: true
+        = f.input :password, required: false, input_html: { autocomplete: "current-password" }
+        = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
+      br
+      .d-grid.gap-2
+        = f.button :submit, "Log in", class: "btn btn-warning"
+    = render "devise/shared/links"

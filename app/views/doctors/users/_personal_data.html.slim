@@ -1,0 +1,27 @@
+.my-2.p-2.bg-light.border.border-warning.rounded
+  table.table.table-striped.table-hover
+    thead
+      tr
+        th[scope="col"]
+          | Personal data
+    tbody
+      tr
+        td
+          | User Name:
+        td
+          = @user.full_name
+      tr
+        td
+          | Phone number:
+        td
+          = @user.formatted_phone
+      tr
+        td
+          | Open appointments:
+        td
+          = link_to number_of_open_appointments(@user), doctors_user_path(id: @user.id)
+      tr
+        td
+          | History appointments:
+        td
+          = link_to number_of_close_appointments(@user), history_doctors_users_path(id: @user.id)

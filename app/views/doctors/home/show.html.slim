@@ -1,0 +1,22 @@
+.row
+  .col-sm-4
+    = render partial: "doctors/shared/personal_data", object: current_doctor
+    - if @categories.any?
+      .my-2.p-2.bg-light.border.border-warning.rounded
+        table.table.table-striped.table-hover
+          thead
+            tr
+              th[scope="col"]
+                | Specializations
+        = render partial: "doctors/shared/category", collection: @categories
+  .col-sm-8
+    - if @open_appointments.any?
+      table.table.table-striped.table-hover
+        thead
+          tr
+            th
+              | Open appointments
+      .d-grid.gap-3.my-2
+        = render partial: "doctors/shared/appointment", collection: @open_appointments, as: :item
+      .digg_pagination.m-3
+        = will_paginate @open_appointments

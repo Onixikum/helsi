@@ -1,0 +1,30 @@
+.p-2.bg-light.border.border-warning.rounded
+  table.table.table-striped.table-hover
+    tbody
+      tr
+        td
+          | Date:
+        td
+          = item.appointment_date
+      tr
+        td
+          | Symptoms:
+        td.text-break
+          = item.symptoms
+      tr
+        td
+          | Doctor:
+        td
+          = item.doctor.full_name
+      - if item.doctor == current_doctor && item.opening?
+        = simple_form_for(item, url: doctors_appointment_path(id: item.id), method: :patch) do |f|
+          = f.error_notification
+          .input-group.mb-3
+            = f.text_field :recommendation, class: "form-control", placeholder: "Write the appointment to the patient", "aria-label" => "Write the appointment to the patient", "aria-describedby" => "button-addon2"
+            = f.submit class: "btn btn-warning", id: "button-addon2"
+      - if item.recommendation.present?
+        tr
+          td
+            |  Recommendation:
+          td.text-break
+            = item.recommendation
